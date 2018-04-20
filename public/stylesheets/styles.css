@@ -1,0 +1,288 @@
+
+ html, body{
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+ #top{
+    vertical-align: top;
+    height: 15%;
+    background-color: #0B0C0C;
+    width: 100%;
+    position: fixed;
+    padding-left: 3%;
+    padding-right: 3%;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px black;
+    color: white;
+}
+#topleft{
+    display: inline-block;
+    width: 47%;
+}
+#topright{
+    display: inline-block;
+    width: 47%;
+    text-align: right;
+}
+#spacer{
+    vertical-align: top;
+    height: 15%;
+    background-color: #fff;
+}
+#lower{
+    height: 100%;
+    background-color: blue;
+}
+#bottom{
+    height:12%;
+    background-color: #0B0C0C;
+    border: 1px solid black;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 2%;
+    color: white;
+    
+}
+#bottom a{
+    text-decoration: none;
+    color: white;
+}
+#top a{
+    text-decoration: none;
+    color: white;
+}
+.logo{
+    display: inline-block;
+    height: 30%;
+}
+ /*---------------------------------------------------------------------------------
+ ABOUT PAGE STYLES
+ ---------------------------------------------------------------------------------*/
+#middle{
+    height: 100%;
+    background-color: #F0F0F0;
+}
+#midtop{
+    vertical-align: top;
+    height: 45%;
+}
+#midleft{
+    vertical-align: top;
+    display: inline-block;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+}
+#profileBuffer{
+    vertical-align: center;
+    margin-top: 5%;
+    display: inline-block;
+    height: 80%;
+    width: 70%;
+    
+}
+#midright{
+    padding-top: 1.5%;
+    vertical-align: top;
+    width: 64%;
+    height: 100%;
+    padding-right: 1%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+#projright{
+    padding-top: 1.5%;
+    vertical-align: top;
+    width: 64%;
+    height: 100%;
+    padding-right: 1%;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+}
+#projbottom{
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 2%;
+    box-sizing: border-box;
+    vertical-align: top;
+    height:55%;
+}
+#midright a{
+    color: navy;
+}
+#midbottom{
+    box-sizing: border-box;
+    padding-left: 2%;
+    box-sizing: border-box;
+    vertical-align: top;
+    height:55%;
+}
+.tech{
+    display: inline-block;
+    box-sizing: border-box;
+    height: 20%;
+    width: 24%;
+    margin:2px;
+    background-color: red;
+}
+.techpic{
+    display: inline-block;
+    height: 90%;
+    width: 18%;
+    background-color: #fff;
+    margin:1%;
+}
+.techdesc{
+    display: inline-block;
+    vertical-align: top;
+    width: 78%;
+}
+.column{
+    height: 70%;
+    width: 17%;
+    background-color: whitesmoke;
+    box-shadow: 5px 8px 3px;
+    display: inline-block;
+    margin: 0% 2%;
+    text-align: center;
+    vertical-align: top;
+}
+.flair{
+    width: 80%;
+    background-color: navy;
+    color: white;
+    height: 15%;
+    display: inline-block;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 3%;
+    margin-bottom: 3%;
+    border: 1.5px solid black;
+}
+
+ /*---------------------------------------------------------------------------------
+ PROJECT PAGE STYLES
+ ---------------------------------------------------------------------------------*/
+ #projects{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    text-align: center;
+}
+.container{
+    display: inline-block;
+    width: 400px;
+    padding: 0px;
+    vertical-align: top;
+}
+.proj_header{
+    height: 30px;
+    vertical-align: top;
+    text-align: left;
+}
+.proj_header h3{
+    margin-top: 0px;
+}
+.project{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    vertical-align: top;
+}
+.imgbuff{
+    display: inline-block;
+    width: 100%;
+    background-size: 100%;
+    vertical-align: top;
+}
+.screencap{
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+    background-color: white;
+}
+.proj_desc{
+    vertical-align: top;
+    display: inline-block;
+    height: 100%;
+    width: 49%;
+    background-color: lightblue;
+}
+.overlay{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    
+}
+.overlay2{
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
+    background-color: black;
+    opacity: .8;
+    text-align: left;
+    
+}
+/*---------------------------------------------------------------------------------
+CONTACT PAGE STYLES
+---------------------------------------------------------------------------------*/
+#contact{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 1%;
+    text-align: center;
+    background-color: #F0F0F0;
+}
+#contactform{
+    width: 70%;
+    height: 90%;
+    background-color: slategray;
+    border: 2px solid black;
+    box-shadow: 4px 4px 10px;
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-top: 10px;
+    display: inline-block;
+}
+.buff{
+    display: inline-block;
+    width: 25%;
+    margin-right: 3%;
+}
+.button{
+    color: white;
+    border: 1px solid black;
+    background-color: green;
+    border-radius: 5px;
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+}
+.right{
+    text-align: right;
+    box-sizing: border-box;
+    padding-right: 20%;
+}
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 12px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]{
+    cursor: pointer;
+}

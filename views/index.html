@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="/stylesheets/styles.css">
+  <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  <link rel="shortcut icon" href="/images/favicon.ico" >
+
+ 
+
+</head>
+<body>
+  <!-- ---------------------------------------------------------------------------------
+                              NAVBAR
+  --------------------------------------------------------------------------------- -->
+  <div id="top">
+    <div id="topleft">
+    <div style="display: inline-block">
+        <img src="images/ME.png" alt=":)" width="20px;">
+    </div>
+    <div style="display: inline-block">
+      <h1> <a href="/">Bret A Farley </a></h1>
+    </div>
+    <div style="display: inline-block">
+        <img src="images/ME.png" alt=":)" width="20px;">
+    </div>
+    </div>
+    <div id="topright">
+        <h2>
+            <a href="/"> About </a> | 
+            <a href="/projects"> Projects </a> | 
+            <a href="/contact"> Contact </a>
+        </h2>
+    </div>
+  </div>
+  <div id="spacer">
+  </div>
+  <!-- ---------------------------------------------------------------------------------
+                              MAIN
+  --------------------------------------------------------------------------------- -->
+  <div id = "lower">
+    <div id="middle">
+        <div id="midtop">
+            <div id="midleft">
+                <div id="profileBuffer">
+                    <img src="images/me.jpeg" alt=":)" style = 'height: 100%; border-radius: 50%; box-shadow: 2px 2px 10px; border: 1px solid black'>
+                </div>
+            </div>
+            <div id="midright">
+                <h3> About Me </h3>
+                <div>
+                    As a current Web Development Teacher Assistant, I am a strong conceptual programmer with a 
+                    lot of in-field experience to build upon. That said, I am hungry to prove myself in a 
+                    professional development environment.
+                </div>
+            </div>
+        </div>
+        <div id="midbottom" style="text-align:center">
+            <h3> Technologies and Skills </h3>
+            <div class="column">
+                <h3> Languages </h3>
+                <div class="flair">
+                    <i class="devicon-python-plain"></i>
+                    Python
+                </div>
+                <div class="flair">
+                    <i class="devicon-ruby-plain"></i>
+                    Ruby
+                </div>
+                <div class="flair">
+                    <i class="devicon-javascript-plain"></i>
+                    Javascript
+                </div>
+                <div class="flair">
+                    <i class="devicon-cplusplus-line"></i>
+                    C++
+                </div>
+            </div>
+            
+            <div class="column">
+                <h3> Frameworks </h3>
+                <div class="flair">
+                    <i class="devicon-django-plain"></i>
+                    Django
+                </div>
+                <div class="flair">
+                    <i class="devicon-rails-plain"></i>
+                    Rails
+                </div>
+                <div class="flair">
+                    <i class="devicon-express-original"></i>
+                    Express
+                </div>
+                <div class="flair">
+                    <i class="devicon-angularjs-plain"></i>
+                    Angular
+                </div>
+            </div>
+            
+            <div class="column">
+                <h3> Databases </h3>
+                <div class="flair">
+                    <i class="devicon-postgresql-plain"></i>
+                    Postgre SQL
+                </div>
+                <div class="flair">
+                    <i class="devicon-mysql-plain"></i>
+                    My SQL
+                </div>
+                <div class="flair">
+                    <i class="devicon-mongodb-plain"></i>
+                    Mongo DB
+                </div>
+            </div>
+            
+            <div class="column">
+                <h3> Other Neat Things </h3>
+                <div class="flair">
+                    <i class="devicon-git-plain"></i>
+                    Git
+                </div>
+                <div class="flair">
+                    <i class="devicon-amazonwebservices-original"></i>
+                    AWS
+                </div>
+                <div class="flair">
+                    <i class="devicon-nginx-plain"></i>
+                    Nginx
+                </div>
+                <div class="flair">
+                    <i class="devicon-nodejs-plain"></i>
+                    NodeJS
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+  </div>
+  <!-- ---------------------------------------------------------------------------------
+                              PROJECTS
+  --------------------------------------------------------------------------------- -->
+  <script>
+      function snakeover(x){
+          console.log('enter')
+          x.innerHTML = `
+          <div class="overlay2">
+              <br>
+              <h4 style="margin: 0px;"><a href="https://cdn.rawgit.com/BretFarley129/Snek-game/17f3263e/demo.html" > Snake </a></h4>
+              <div style="margin: 10px;">
+                  <span style="color:white">
+                      A simple snake game that I designed in an hour as a demo on interactive
+                      web design. 
+                  </span>
+              </div>
+          </div>
+          `;
+      }
+      function snakeout(y){
+          console.log('exit')
+          y.innerHTML = `
+          <div class="overlay"  onmouseenter="snakeover(this)">
+          </div>
+          `;
+      }
+      function bikeover(x){
+          console.log('enter')
+          x.innerHTML = `
+          <div class="overlay2">
+              <br>
+              <h4 style="margin: 0px;"><a href="http://18.144.5.154" > Bicycle Marketplace </a></h4>
+              <div style="margin: 10px;">
+                  <span style="color:white">
+                      A "Craigslist-lite" application that allows users to list bikes and contact other
+                      users that are selling bikes
+                  </span>
+              </div>
+          </div>
+          `;
+      }
+      function bikeout(y){
+          console.log('exit')
+          y.innerHTML = `
+          <div class="overlay"  onmouseenter="bikeover(this)">
+          </div>
+          `;
+      }
+  </script>
+  <div id="projects">
+      <br>
+      <h1> Projects </h1>
+      <br>
+      <div class="container">
+          <div class="proj_header">
+              <h3> <a href="https://cdn.rawgit.com/BretFarley129/Snek-game/17f3263e/demo.html"> Snake </a> </h3>
+          </div>
+          <div class="project" onmouseleave="snakeout(this)"  style="height: 325px; background-image: url('images/snake.png')" >
+              <div class="overlay" onmouseenter="snakeover(this)">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="proj_header">
+              <h3> <a href="http://18.144.5.154"> Bicycle Marketplace </a> </h3>
+          </div>
+          <div class="project" onmouseleave="bikeout(this)"  style="height: 226px; background-image: url('images/bikes.PNG')" >
+              <div class="overlay" onmouseenter="bikeover(this)">
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- ---------------------------------------------------------------------------------
+                              Contact
+  --------------------------------------------------------------------------------- -->
+  <div id="contact">
+      <br>
+      <div id="contactform">
+        <h1> Get in touch! </h1>
+          <form action="/sendform" method="post">
+              <div class='buff'>
+                  <h3> Full Name </h3>
+                  <input type="text" name="name">
+              </div>
+              <div class='buff'>
+                  <h3> Email </h3>
+                  <input type="text" name="email">
+              </div>
+              <div class="buff">
+                <h3> Phone # </h3>
+                <input type="text" name="phone">
+              </div>
+              <h3> Message </h3>
+              <textarea rows="6" style="width: 80%;" name = 'message'></textarea>
+              <br><br>
+              <div class="right">
+                  <button class="button">Send</button>
+              </div>
+  
+          </form>
+      </div>
+  </div>
+   <!-- ---------------------------------------------------------------------------------
+                              Footer
+  --------------------------------------------------------------------------------- -->
+  <div id="bottom">
+    <a href="BretFarleyResume.pdf" download>Resume</a>
+    <span style="color: white"> | </span>
+    <div class="logo">
+      <i class="devicon-github-plain" style="color:white;"></i>
+    </div>
+      <a href="https://github.com/BretFarley129"> BretFarley129</a>
+      <span style="color: white"> | </span>
+      <div class='logo'>
+          <img src="images/linkedin.png" alt=":)" width="20px;"> 
+      </div>
+      <a href="https://www.linkedin.com/in/bret-farley-41352014b/"> Bret Farley</a>
+
+    </div>
+</body>
+</html>
+ 
