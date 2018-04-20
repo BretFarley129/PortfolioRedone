@@ -29,7 +29,7 @@ app.post('/sendform', function(req, res) {
     let mailBody = {
         from: req.body.email,
         to: 'bretfarley129@gmail.com',
-        subject: `${req.body.name} contacted you!`;
+        subject: `${req.body.name} contacted you!`,
         text: req.body.message
     };
     transporter.sendMail(mailBody, function (err, info) {
