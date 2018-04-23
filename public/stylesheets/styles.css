@@ -30,7 +30,6 @@
 #spacer{
     vertical-align: top;
     height: 15%;
-    background-color: #fff;
 }
 #lower{
     height: 100%;
@@ -243,7 +242,7 @@ CONTACT PAGE STYLES
 }
 #contactform{
     width: 70%;
-    height: 90%;
+    height: 84%;
     background-color: slategray;
     border: 2px solid black;
     box-shadow: 4px 4px 10px;

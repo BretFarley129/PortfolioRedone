@@ -10,6 +10,12 @@
 
 </head>
 <body>
+    <script>
+        function pagescroll(elem){
+            let selectedElement = document.getElementById(elem);
+            selectedElement.scrollIntoView({behavior: "smooth", block: "start", inline:'start'})
+        }
+    </script>
   <!-- ---------------------------------------------------------------------------------
                               NAVBAR
   --------------------------------------------------------------------------------- -->
@@ -27,18 +33,19 @@
     </div>
     <div id="topright">
         <h2>
-            <a href="/"> About </a> | 
-            <a href="/projects"> Projects </a> | 
-            <a href="/contact"> Contact </a>
+            <a style="cursor: pointer;" onclick="pagescroll('lower')"> About </a> | 
+            <a style="cursor: pointer;" onclick="pagescroll('projects')"> Projects </a> | 
+            <a style="cursor: pointer;" onclick="pagescroll('contact')"> Contact </a>
         </h2>
     </div>
   </div>
-  <div id="spacer">
-  </div>
+  
   <!-- ---------------------------------------------------------------------------------
                               MAIN
   --------------------------------------------------------------------------------- -->
   <div id = "lower">
+    <div id="spacer">
+    </div>
     <div id="middle">
         <div id="midtop">
             <div id="midleft">
@@ -187,6 +194,8 @@
       }
   </script>
   <div id="projects">
+        <div id="spacer">
+        </div>
       <br>
       <h1> Projects </h1>
       <br>
@@ -208,14 +217,17 @@
               </div>
           </div>
       </div>
+      <div id="spacer">
+    </div>
   </div>
   <!-- ---------------------------------------------------------------------------------
                               Contact
   --------------------------------------------------------------------------------- -->
   <div id="contact">
-      <br>
+        <div id="spacer">
+        </div>
       <div id="contactform">
-        <h1> Get in touch! </h1>
+            <h1> Get in touch! </h1>
           <form action="/sendform" method="post">
               <div class='buff'>
                   <h3> Full Name </h3>
@@ -237,6 +249,8 @@
               </div>
   
           </form>
+      </div>
+      <div id="spacer">
       </div>
   </div>
    <!-- ---------------------------------------------------------------------------------
