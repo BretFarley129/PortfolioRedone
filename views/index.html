@@ -43,7 +43,7 @@
   <!-- ---------------------------------------------------------------------------------
                               MAIN
   --------------------------------------------------------------------------------- -->
-  <div id = "lower">
+  <div id = "lower" style="background-image: url(images/me_fullsize.jpeg); background-size:100%">
     <div id="spacer">
     </div>
     <div id="middle">
@@ -121,11 +121,7 @@
             </div>
             
             <div class="column">
-                <h3> Other Neat Things </h3>
-                <div class="flair">
-                    <i class="devicon-git-plain"></i>
-                    Git
-                </div>
+                <h3> Backend </h3>
                 <div class="flair">
                     <i class="devicon-amazonwebservices-original"></i>
                     AWS
@@ -137,6 +133,25 @@
                 <div class="flair">
                     <i class="devicon-nodejs-plain"></i>
                     NodeJS
+                </div>
+                <div class="flair">
+                    <i class="devicon-ubuntu-plain"></i>
+                    Ubuntu
+                </div>
+            </div>
+            <div class="column">
+                <h3> Methodologies </h3>
+                <div class="flair">
+                    <i class="devicon-git-plain"></i>
+                    Git
+                </div>
+                <div class="flair">
+                    <i class="devicon-github-plain"></i>
+                    Github
+                </div>
+                <div class="flair">
+                    <i class="devicon-bitbucket-plain"></i>
+                    Bitbucket
                 </div>
             </div>
             
@@ -192,6 +207,27 @@
           </div>
           `;
       }
+      function eventover(x){
+          console.log('enter')
+          x.innerHTML = `
+          <div class="overlay2">
+              <br>
+              <h4 style="margin: 0px;"><a href="http://54.67.114.218" > Eventful </a></h4>
+              <div style="margin: 10px;">
+                  <span style="color:white">
+                      A Ruby on Rails application used to keep track and discuss upcoming events
+                  </span>
+              </div>
+          </div>
+          `;
+      }
+      function eventout(y){
+          console.log('exit')
+          y.innerHTML = `
+          <div class="overlay"  onmouseenter="eventover(this)">
+          </div>
+          `;
+      }
   </script>
   <div id="projects">
         <div id="spacer">
@@ -214,6 +250,15 @@
           </div>
           <div class="project" onmouseleave="bikeout(this)"  style="height: 226px; background-image: url('images/bikes.PNG')" >
               <div class="overlay" onmouseenter="bikeover(this)">
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="proj_header">
+              <h3> <a href="http://54.67.114.218"> Eventful </a> </h3>
+          </div>
+          <div class="project" onmouseleave="eventout(this)"  style="height: 226px; background-image: url('images/events.PNG')" >
+              <div class="overlay" onmouseenter="eventover(this)">
               </div>
           </div>
       </div>
