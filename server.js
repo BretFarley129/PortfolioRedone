@@ -24,8 +24,7 @@ const transporter = nodemailer.createTransport({
 });
 
 app.get('/', function(req, res) {
-    console.log('config_________________');
-    console.log(config);
+   
     res.sendFile(path.join(__dirname + '/views/index.html'));
 });
 
@@ -33,12 +32,13 @@ app.post('/sendform', function(req, res) {
     let mailBody = {
         from: 'BretBot <fretbarleybot@gmail.com>',
         to: 'bretfarley129@gmail.com',
-        subject: `${req.body.name} contacted you!`,
+        subject: `${req.body.Subject} (${req.body.Name} contacted you!)`,
         html: `
-        <h3> Name: ${req.body.name} </h3>
-        <h3> Email: ${req.body.email} </h3>
-        <h3> Phone: ${req.body.phone} </h3>
-        <div> ${req.body.message} </div>
+        <h3> Name: ${req.body.Name} </h3>
+        <h3> Email: ${req.body.Email} </h3>
+        <h3> Phone: ${req.body.Phone} </h3>
+        <h3> Subject: ${req.body.Subject} </h3>
+        <div> ${req.body.Message} </div>
         `
     };
     transporter.sendMail(mailBody, function (err, info) {
@@ -49,7 +49,7 @@ app.post('/sendform', function(req, res) {
             console.log("info", info)
             console.log('Message sent: %s', info.messageId);
             // Preview only available when sending through an Ethereal account
-            console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+            // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         }
     })
     res.redirect('/');

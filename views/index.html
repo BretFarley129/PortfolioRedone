@@ -80,32 +80,36 @@
                     </div>
                     <div class="modal-body text-left">
                         <div class="container">
-                            <form>
+
+
+                            <form action="/sendform" method="post">
                                 <div class="form-row" style="width: 80%">
                                     <div class="form-group col-md-6" style="vertical-align: top">
                                         <label for="Email">Email</label>
-                                        <input type="text" class="form-control" id="Email" placeholder="Email">
+                                        <input type="text" class="form-control" name="Email" id="Email" placeholder="Email">
                                     </div>
                                     <div class="form-group col-md-6" style="vertical-align: top">
                                         <label for="Subject">Subject</label>
-                                        <input type="text" class="form-control" id="Subject" placeholder="Subject">
+                                        <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject">
                                     </div>
                                 </div>
                                 <div class="form-row" style="width: 80%">
                                     <div class="form-group col-md-6" style="vertical-align: top">
                                         <label for="Name">Full Name</label>
-                                        <input type="text" class="form-control" id="Name" placeholder="Full Name">
+                                        <input type="text" class="form-control" name="Name" id="Name" placeholder="Full Name">
                                     </div>
                                     <div class="form-group col-md-6" style="vertical-align: top">
                                         <label for="Phone">Phone</label>
-                                        <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                                        <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Phone">
                                     </div>
                                 </div>
                                 <label for="Message">Message</label>
-                                <textarea rows="3" id="Message" placeholder="Message"></textarea>
+                                <textarea rows="3" name="Message" id="Message" placeholder="Message"></textarea>
                                     
                                     <button type="submit" class="btn btn-primary">Send</button>
                             </form>
+
+                            
                         </div>
                     </div>
                 </div>
