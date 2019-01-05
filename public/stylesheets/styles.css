@@ -164,6 +164,25 @@
     border: 1.5px solid black;
 }
 
+.column1{
+    display: inline-block;
+    /* background-color: red; */
+    height: 250px;
+    width: 48%;
+    text-align: left;
+    vertical-align: top;
+}
+.column2{
+    display: inline-block;
+    /* background-color: red; */
+    height: 250px;
+    width: 40%;
+    margin-right:10%;
+    text-align: left;
+    vertical-align: top;
+}
+
+
  /*---------------------------------------------------------------------------------
  PROJECT PAGE STYLES
  ---------------------------------------------------------------------------------*/
@@ -214,13 +233,38 @@
     width: 49%;
     background-color: lightblue;
 }
-.overlay{
+
+.img_container{
+    position: relative;
+    display: inline-block;
+    /* background-color: red; */
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    vertical-align: top;
+    background-color: black;
+    text-align: left;
+}
+
+.container:hover .overlay {
+    opacity: .8;
+}
+
+/* .overlay{
     box-sizing: border-box;
     height: 100%;
     width: 100%;
     vertical-align: top;
     
-}
+} */
 .overlay2{
     box-sizing: border-box;
     height: 100%;

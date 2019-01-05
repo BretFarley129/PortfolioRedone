@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Portfolio</title>
+  <title>Bret Farley</title>
   <link rel="stylesheet" href="/stylesheets/styles.css">
   <link rel="stylesheet" href="/stylesheets/BSstyles.css">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
   <link rel="shortcut icon" href="/images/favicon.ico" >
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
@@ -16,119 +17,144 @@
 </head>
 <body>
     <script>
-        function pagescroll(elem){
-            let selectedElement = document.getElementById(elem);
-            selectedElement.scrollIntoView({behavior: "smooth", block: "start", inline:'start'})
-        }
+
+        //Ready Document for jQuery
+        $(document).ready(function(){
+            //Apply scrollspy to navbar
+            $('body').scrollspy({target: ".navbar", offset: 50});   
+
+            // Add smooth scrolling to Nav links
+            $("#myNavbar a").on('click', function(event) {
+                // Prevent default anchor click behavior
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+
+                    //Use jQuery's animate() method to add smooth page scroll
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+   
+                        //Put next line in to put hash in URL
+                        // window.location.hash = hash;
+                    });
+                }
+            });
+        });
     </script>
   <!-- ---------------------------------------------------------------------------------
                               NAVBAR
   --------------------------------------------------------------------------------- -->
   <div id="container">
-        <nav class="navbar navbar-expand-sm bg-4 navbar-dark fixed-top">
-            <div style="display: inline-block">
-                <img src="images/ME.png" alt=":)" width="20px">
-            </div>
-            <h2>
-                <a class="navbar-brand" style="margin-left: 20px;" href="">Bret Farley</a>
-            </h2>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Contact
+    <nav class="navbar navbar-expand-sm bg-4 navbar-dark fixed-top" id="myNavbar">
+        <div style="display: inline-block">
+            <img src="images/ME.png" alt=":)" width="20px">
+        </div>
+        <h2>
+            <a class="navbar-brand" style="margin-left: 20px;" href="">Bret Farley</a>
+        </h2>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills">Skills <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Contact
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="https://github.com/BretFarley129">
+                                <img src="images/githubDark.png" alt=":)" width="20px;">
+                            Github
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="https://github.com/BretFarley129">
-                                    <img src="images/githubDark.png" alt=":)" width="20px;">
-                                Github
-                            </a>
-                            <a class="dropdown-item" href="https://www.linkedin.com/in/bret-farley">
-                                <img src="images/linkedinDark.png" alt=":)" width="20px;">
-                                LinkedIn
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalCenter">
-                                <img src="images/mailDark.png" alt=":)" width="20px;">
-                                Direct contact
-                            </a>
-                        </div>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="pagescroll('about')">About <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" onclick="pagescroll('projects')">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                                <a class="nav-link" href="/download" download>Resume</a>
-                        </li>
-                        
-                    </li>
-                </ul>
-            </div>
-
-        </nav>
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Contact me!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                        <a class="dropdown-item" href="https://www.linkedin.com/in/bret-farley">
+                            <img src="images/linkedinDark.png" alt=":)" width="20px;">
+                            LinkedIn
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModalCenter">
+                            <img src="images/mailDark.png" alt=":)" width="20px;">
+                            Direct contact
+                        </a>
                     </div>
-                    <div class="modal-body text-left">
-                        <div class="container">
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="/download" download>Resume</a>
+                </li>
+                    
+                
+            </ul>
+        </div>
+
+    </nav>
+        <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Contact me!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-left">
+                    <div class="container">
 
 
-                            <form action="/sendform" method="post">
-                                <div class="form-row" style="width: 80%">
-                                    <div class="form-group col-md-6" style="vertical-align: top">
-                                        <label for="Email">Email</label>
-                                        <input type="text" class="form-control" name="Email" id="Email" placeholder="Email">
-                                    </div>
-                                    <div class="form-group col-md-6" style="vertical-align: top">
-                                        <label for="Subject">Subject</label>
-                                        <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject">
-                                    </div>
+                        <form action="/sendform" method="post">
+                            <div class="form-row" style="width: 80%">
+                                <div class="form-group col-md-6" style="vertical-align: top">
+                                    <label for="Email">Email</label>
+                                    <input type="text" class="form-control" name="Email" id="Email" placeholder="Email">
                                 </div>
-                                <div class="form-row" style="width: 80%">
-                                    <div class="form-group col-md-6" style="vertical-align: top">
-                                        <label for="Name">Full Name</label>
-                                        <input type="text" class="form-control" name="Name" id="Name" placeholder="Full Name">
-                                    </div>
-                                    <div class="form-group col-md-6" style="vertical-align: top">
-                                        <label for="Phone">Phone</label>
-                                        <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Phone">
-                                    </div>
+                                <div class="form-group col-md-6" style="vertical-align: top">
+                                    <label for="Subject">Subject</label>
+                                    <input type="text" class="form-control" name="Subject" id="Subject" placeholder="Subject">
                                 </div>
-                                <label for="Message">Message</label>
-                                <textarea rows="3" name="Message" id="Message" placeholder="Message"></textarea>
-                                    
-                                    <button type="submit" class="btn btn-primary">Send</button>
-                            </form>
+                            </div>
+                            <div class="form-row" style="width: 80%">
+                                <div class="form-group col-md-6" style="vertical-align: top">
+                                    <label for="Name">Full Name</label>
+                                    <input type="text" class="form-control" name="Name" id="Name" placeholder="Full Name">
+                                </div>
+                                <div class="form-group col-md-6" style="vertical-align: top">
+                                    <label for="Phone">Phone</label>
+                                    <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Phone">
+                                </div>
+                            </div>
+                            <label for="Message">Message</label>
+                            <textarea rows="3" name="Message" id="Message" placeholder="Message"></textarea>
+                                
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </form>
 
-                            
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     <!-- ---------------------------------------------------------------------------------
                                 MAIN
     --------------------------------------------------------------------------------- -->
-    <div class="container-fluid bg-1 text-center">
+    <div class="container-fluid bg-1 text-center h-100" id="about">
         <br>
         <br>
         <br>
         <br>
-        <h3> Who am I? </h3>
+        <h3> Bret Farley, Software Developer </h3>
         <br>
-        <img src="images/me.jpeg" alt=":)" style = 'height: 320px; border-radius: 50%'>
+        <img src="images/me.jpeg" alt=":)" style = 'width:25%; border-radius: 50%'>
         <br>
         <br>
-        <h3> Full Stack Engineer </h3>
+        <!-- <h3> Full Stack Engineer </h3> -->
         <br>
         <div class="mx-auto w-50" style="text-align: center">
                 As a lifetime fan of solving puzzles and working my way through logic games, I found
@@ -142,112 +168,162 @@
         <br>
         <br>
     </div>
-    <div class="container-fluid bg-2 text-center">
+    <!-- ---------------------------------------------------------------------------------
+                                Skills
+    --------------------------------------------------------------------------------- -->
+    <div class="container-fluid bg-2 text-center h-100" id="skills">
         <br>
         <br>
-        <h3> What can I do? </h3>
         <br>
-        <div class="container-fluid text-center">
-            <div class="row">
-            <div class="col">
-                <div class="well well-lg bg-light text-dark rounded p-2">
-                    <h4>Languages</h4>
-                    <div class="flair">
-                        <i class="devicon-python-plain"></i>
-                        Python
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-ruby-plain"></i>
-                        Ruby
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-javascript-plain"></i>
-                        Javascript
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-cplusplus-line"></i>
-                        C++
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="well well-lg bg-light text-dark rounded p-2">
-                    <h4>Frameworks</h4>
-                    <div class="flair">
-                        <i class="devicon-django-plain"></i>
-                        Django
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-rails-plain"></i>
-                        Rails
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-express-original"></i>
-                        Express
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-angularjs-plain"></i>
-                        Angular
-                    </div>
-                </div>
-            </div>
-            <div class="col"> 
-                <div class="well well-lg bg-light text-dark rounded p-2">
-                    <h4>Databases</h4>
-                    <div class="flair">
-                        <i class="devicon-postgresql-plain"></i>
-                        Postgre SQL
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-mysql-plain"></i>
-                        My SQL
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-mongodb-plain"></i>
-                        Mongo DB
-                    </div>
-                </div>
-            </div>
-            <div class="col"> 
-                <div class="well well-lg bg-light text-dark rounded p-2">
-                    <h4>Backend</h4>
-                    <div class="flair">
-                        <i class="devicon-amazonwebservices-original"></i>
-                        AWS
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-nginx-plain"></i>
-                        Nginx
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-nodejs-plain"></i>
-                        NodeJS
-                    </div>
-                    <div class="flair">
-                        <i class="devicon-ubuntu-plain"></i>
-                        Ubuntu
-                    </div>
-                </div>
-            </div>
-            <div class="col"> 
-                <div class="well well-lg bg-light text-dark rounded p-2">
-                    <h4>Methodologies</h4>
-                    <div class="flair">
-                            <i class="devicon-git-plain"></i>
-                            Git
+        <h3> Skills </h3>
+        <br>
+        
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                        <div style="margin-left:10%">
+                            <h1 style="text-align:left">Languages</h1>
+                            <div class="column1">
+                                <i class="devicon-python-plain"></i>
+                                Python
+                                <br>
+                                <i class="devicon-ruby-plain"></i>
+                                Ruby
+                                <br>
+                                <i class="devicon-javascript-plain"></i>
+                                Javascript
+                                <br>
+                                <i class="devicon-typescript-plain"></i>
+                                Typescript
+                                <br>
+                                <i class="devicon-cplusplus-line"></i>
+                                C++
+                                <br>
+                            </div>
+                            <div class="column2">
+                                <p>
+                                    A 'native' Python programmer, I learned a variety of languages to become
+                                    a more knowledgeable Web Developer. I picked up C++ in order to 
+                                    familiarize myself with strictly typed languages and better understand 
+                                    Object Oriented Programming and Data Structures.
+                                </p>
+                            </div>
                         </div>
-                        <div class="flair">
-                            <i class="devicon-github-plain"></i>
-                            Github
-                        </div>
-                        <div class="flair">
-                            <i class="devicon-bitbucket-plain"></i>
-                            Bitbucket
-                        </div>
-                    </div>
                 </div>
+                <div class="carousel-item">
+                        <div style="margin-left:10%">
+                            <h1 style="text-align:left">Frameworks</h1>
+                            <div class="column1">
+                                <i class="devicon-django-plain"></i>
+                                Django
+                                <br>
+                                <i class="devicon-rails-plain"></i>
+                                Rails
+                                <br>
+                                <i class="devicon-express-original"></i>
+                                Express
+                                <br>
+                                <i class="devicon-angularjs-plain"></i>
+                                Angular
+                                <br>
+                                <i class="devicon-bootstrap-plain"></i>
+                                Bootstrap
+                                <br>
+                            </div>
+                            <div class="column2">
+                                <p>
+                                    I pride myself on being a diverse Full Stack Developer who is comfortable 
+                                    utilizing different frameworks to create just the desired product for my 
+                                    projects. I pick up new frameworks rather quickly.
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                        <div style="margin-left:10%">
+                            <h1 style="text-align:left">Databases</h1>
+                            <div class="column1">
+                                <i class="devicon-postgresql-plain"></i>
+                                Postgre SQL
+                                <br>
+                                <i class="devicon-mysql-plain"></i>
+                                My SQL
+                                <br>
+                                <i class="devicon-mongodb-plain"></i>
+                                Mongo DB
+                                <br>
+                            </div>
+                            <div class="column2">
+                                <p>
+                                    I have a great deal of experience working and maintaining both SQL 
+                                    and noSQL databases. I understand the structure as well as the strengths 
+                                    and weaknesses of both.
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                        <div style="margin-left:10%">
+                            <h1 style="text-align:left">Backend</h1>
+                            <div class="column1">
+                                <i class="devicon-amazonwebservices-original"></i>
+                                AWS
+                                <br>
+                                <i class="devicon-nginx-plain"></i>
+                                Nginx
+                                <br>
+                                <i class="devicon-nodejs-plain"></i>
+                                NodeJS
+                                <br>
+                                <i class="devicon-ubuntu-plain"></i>
+                                Ubuntu
+                                <br>
+                            </div>
+                            <div class="column2">
+                                <p>
+                                    My projects are all deployed using AWS EC2 on ubuntu virtual machines. 
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                <div class="carousel-item">
+                        <div style="margin-left:10%">
+                            <h1 style="text-align:left">Methodologies</h1>
+                            <div class="column1">
+                                <i class="devicon-git-plain"></i>
+                                Git
+                                <br>
+                                <i class="devicon-github-plain"></i>
+                                Github
+                                <br>
+                                <i class="devicon-bitbucket-plain"></i>
+                                Bitbucket
+                                <br>
+                            </div>
+                            <div class="column1">
+                                <p>
+                                    I play well with others.
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                
             </div>
-            
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
         <br>
         <br>
@@ -256,44 +332,71 @@
     <!-- ---------------------------------------------------------------------------------
                               PROJECTS
   --------------------------------------------------------------------------------- -->
-    <div class="container-fluid bg-3 text-center">
+    <div class="container-fluid bg-3 text-center" id="projects">
         <br>
         <h3> Projects </h3>
         <br>
-        <div class="row">
+        <div class="row" style="margin-left:0px; margin-right:0px">
             <div class="col">
                 <div class="container">
                     <div class="proj_header">
                         <h4> <a style="color: white" href="http://54.241.154.173/users/new"> Dojo Secrets </a> </h4>
                     </div>
                     <br>
-                    <div class="project" onmouseleave="snakeout(this)"  style="height: 217px; background-image: url('images/secrets.png')" >
-                        <div class="overlay" onmouseenter="snakeover(this)">
-                        </div>
+                    <div class="img_container">
+                        <a href="http://54.241.154.173/users/new" target="_blank" target="_blank">
+                            <div class="overlay">
+                                <div style="margin: 8%;">
+                                    <span style="color:white">
+                                        An app to anonymously post and like "secrets" that other users post.
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <img src="images/secrets.png" class="w-100">
+
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="container">
                     <div class="proj_header">
-                        <h4> <a style="color: white" href="http://18.144.5.154"> Bicycle Marketplace </a> </h4>
+                        <h4> <a style="color: white" href="http://18.144.5.154" target="_blank"> Bicycle Marketplace </a> </h4>
                     </div>
                     <br>
-                    <div class="project" onmouseleave="bikeout(this)"  style="height: 217px; background-image: url('images/bikes.PNG')" >
-                        <div class="overlay" onmouseenter="bikeover(this)">
-                        </div>
+                    <div class="img_container">
+                        <a href="http://18.144.5.154" target="_blank">
+                            <div class="overlay">
+                                <div style="margin: 8%;">
+                                    <span style="color:white">
+                                        A "Craigslist-lite" application that allows users to list bikes and contact other
+                                        users that are selling bikes
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <img src="images/bikes.png" class="w-100">
+
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="container">
                     <div class="proj_header">
-                        <h4> <a style="color: white" href="http://54.67.114.218"> Eventful </a> </h4>
+                        <h4> <a style="color: white" href="http://54.67.114.218" target="_blank"> Eventful </a> </h4>
                     </div>
                     <br>
-                    <div class="project" onmouseleave="eventout(this)"  style="height: 217px; background-image: url('images/events.png')" >
-                        <div class="overlay" onmouseenter="eventover(this)">
-                        </div>
+                    <div class="img_container">
+                        <a href="http://54.67.114.218" target="_blank">
+                            <div class="overlay">
+                                <div style="margin: 8%;">
+                                    <span style="color:white">
+                                        A Ruby on Rails application used to keep track and discuss upcoming events
+                                    </span>
+                                </div>
+                            </div>
+                        </a>
+                        <img src="images/events.png" class="w-100">
                     </div>
                 </div>
             </div>
@@ -323,69 +426,8 @@
   <!-- ---------------------------------------------------------------------------------
                               Scripts
   --------------------------------------------------------------------------------- -->
-  <script>
-      function snakeover(x){
-          console.log('enter')
-          x.innerHTML = `
-          <div class="overlay2">
-              <br>
-              <div style="margin: 10px;">
-                  <span style="color:white">
-                      An app to anonymously post and like "secrets" that other users post. <br><br>
-                  </span>
-              </div>
-          </div>
-          `;
-      }
-      function snakeout(y){
-          console.log('exit')
-          y.innerHTML = `
-          <div class="overlay"  onmouseenter="snakeover(this)">
-          </div>
-          `;
-      }
-      function bikeover(x){
-          console.log('enter')
-          x.innerHTML = `
-          <div class="overlay2">
-              <br>
-              <div style="margin: 10px;">
-                  <span style="color:white">
-                      A "Craigslist-lite" application that allows users to list bikes and contact other
-                      users that are selling bikes
-                  </span>
-              </div>
-          </div>
-          `;
-      }
-      function bikeout(y){
-          console.log('exit')
-          y.innerHTML = `
-          <div class="overlay"  onmouseenter="bikeover(this)">
-          </div>
-          `;
-      }
-      function eventover(x){
-          console.log('enter')
-          x.innerHTML = `
-          <div class="overlay2">
-              <br>
-              <div style="margin: 10px;">
-                  <span style="color:white">
-                      A Ruby on Rails application used to keep track and discuss upcoming events
-                  </span>
-              </div>
-          </div>
-          `;
-      }
-      function eventout(y){
-          console.log('exit')
-          y.innerHTML = `
-          <div class="overlay"  onmouseenter="eventover(this)">
-          </div>
-          `;
-      }
-  </script>
+
+      
 </body>
 </html>
  
